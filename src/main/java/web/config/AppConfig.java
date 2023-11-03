@@ -45,6 +45,7 @@ public class AppConfig {
       entityManager.setJpaProperties(getHibernateProperties());
       return entityManager;
    }
+   @Bean
    public Properties getHibernateProperties() {
       try {
          Properties properties = new Properties();
