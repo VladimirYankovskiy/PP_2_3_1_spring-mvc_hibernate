@@ -7,7 +7,7 @@ import web.Service.UserService;
 import web.models.User;
 
 @Controller
-@RequestMapping("/people")
+@RequestMapping
 public class UsersController {
     private final UserService userService;
     @Autowired
@@ -33,11 +33,11 @@ public class UsersController {
     @PostMapping("/users")
     public String saveUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
-        return "redirect:/people/users";
+        return "redirect:/users";
     }
     @GetMapping("/delete")
     public String delUser(@RequestParam(value = "id") int id) {
         userService.delUser(id);
-        return "redirect:/people/users";
+        return "redirect:/users";
     }
 }

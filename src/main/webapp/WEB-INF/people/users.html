@@ -15,13 +15,13 @@
   </thead>
   <tbody>
   <tr th:each = "user: ${people} ">
-    <td><a th:href="@{/people/user?nameId={id}(id=${user.getId()})}" th:text="${user.getId()}"></a></td>
-    <td><a th:href="@{/people/user?nameId={id}(id=${user.getId()})}" th:text="${user.getName()}"></a></td>
-    <td><a th:href="@{/people/user?nameId={id}(id=${user.getId()})}" th:text="${user.getSurname()}"></a></td>
-    <td><a th:href="@{/people/delete?id={id}(id=${user.getId()})}">Delete user</a></td>
+    <td><a th:href="@{/user?nameId={id}(id=${user.getId()})}" th:text="${user.getId()}"></a></td>
+    <td><a th:href="@{/user?nameId={id}(id=${user.getId()})}" th:text="${user.getName()}"></a></td>
+    <td><a th:href="@{/user?nameId={id}(id=${user.getId()})}" th:text="${user.getSurname()}"></a></td>
+    <td><a th:href="@{/delete?id={id}(id=${user.getId()})}">Delete user</a></td>
   </tr>
   </tbody>
 </table>
-<a href="/people/newUser">Create new user</a>
+<a href="/newUser">Create new user</a>
 </body>
 </html>

@@ -11,7 +11,6 @@ import java.util.List;
 
 
 @Service
-@Transactional
 public class UserServiceImpl implements UserService {
     private UserDao userDao;
     @Autowired
@@ -28,11 +27,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void saveUser(User user) {
         userDao.saveUser(user);
     }
 
     @Override
+    @Transactional
     public void delUser(int id) {
         userDao.delUser(id);
     }
