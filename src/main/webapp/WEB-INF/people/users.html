@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<table class="table-header">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">name</th>
+    <th scope="col">surname</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each = "user: ${people} ">
+    <td><a th:href="@{/people/user?nameId={id}(id=${user.getId()})}" th:text="${user.getId()}"></a></td>
+    <td><a th:href="@{/people/user?nameId={id}(id=${user.getId()})}" th:text="${user.getName()}"></a></td>
+    <td><a th:href="@{/people/user?nameId={id}(id=${user.getId()})}" th:text="${user.getSurname()}"></a></td>
+    <td><a th:href="@{/people/delete?id={id}(id=${user.getId()})}">Delete user</a></td>
+  </tr>
+  </tbody>
+</table>
+<a href="/people/newUser">Create new user</a>
+</body>
+</html>
