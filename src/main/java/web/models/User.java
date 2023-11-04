@@ -10,11 +10,10 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private int id;
-
+    @Column
     private String name;
-
+    @Column
     private String surname;
 
     public User() {
